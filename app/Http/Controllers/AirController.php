@@ -14,11 +14,25 @@ public function ultrasonik()
     }
     public function tinggi()
     {
-        $data=Banjir::latest()->first();
+        $data=Banjir::latest()->get();
         $air=$data->pluck('data_ultrasonik');
         return ['data_ultrasonik'=>$air];
         // return $data;
     }
+    public function overview_ketinggian()
+    {
+        $data=Banjir::whereDate('created_at', date('Y-m-d'))->get();
+        $air=$data->pluck('data_ultrasonik');
+        $time=$data->pluck('created_at');
+        $sum=$data->avg('data_ultrasonik');
+        $terkecil=$data->min('data_ultrasonik');
+        $terbesar=$data->max('data_ultrasonik');
+        return ['data_ultrasonik'=>$air, 'created_at'=>$time, 'kebanyakan'=>$sum, 'kurang'=>$terkecil, 'lebih'=>$terbesar];
+        // return $data;
+    }
+    
+    
+
     public function index()
     {
         return Banjir::all();

@@ -42,14 +42,24 @@ function updatechart() {
         url: 'api/DataKetinggian',
         success: function (data) {
             var b = data.data_ultrasonik;
-            var len = b.length - 1;
-            document.getElementById("real-ketinggian").innerHTML = b[len];
+            document.getElementById("real-ketinggian").innerHTML = b[0];
         }
     });
     chart.updateSeries([{
         data: a
     }])
 }
+$.ajax({
+    url: 'api/overviewketinggian',
+    success: function (data) {
+        var rata = data.kebanyakan;
+        var sedikit = data.kurang;
+        var banyak = data.lebih;
+        document.getElementById("average-ketinggian").innerHTML = rata;
+        document.getElementById("minimal-ketinggian").innerHTML = sedikit;
+        document.getElementById("maksimal-ketinggian").innerHTML = banyak;
+    }
+});
 
 var options = {
     series: [{

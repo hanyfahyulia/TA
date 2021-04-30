@@ -19,7 +19,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="css/sidebar.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -93,7 +93,7 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
         <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
         <ul class="navbar-nav px-3">
@@ -102,6 +102,55 @@
             </li>
         </ul>
     </header>
+
+    <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ 
+  <a href="/home">Dasboard</a>
+  <a href="/tanahlongsor">Tanah Longsor</a>
+  <a href="/banjir">Banjir</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776; </button>
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row">
+            <div class="col-sm-6 col-md-5 col-lg-6">
+                <h3 style="text-align:center;font-weight:bold; margin-top:40px">Kelembapan Tanah</h3>
+                <h3 style="text-align:center; font-size: 100px;"id="real-kelembapan">0</h3>
+
+            </div>
+            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+                <h3 style="text-align:center;font-weight:bold;margin-top :40px">Overview</h3>
+                <div class="panjang">
+                    <div class="w3-Gray ">
+                        <!-- <h7 style= "text-align: center; color:#ffffff;">Nilai Rata- Rata Perbulan</h7> -->
+                        <div class="w3-container w3-green w3-center w3-margin-top w3-round-xlarge" style="width:100%" id="average-kelembapan">0%
+                        </div>
+                        <!-- <h7 style= "text-align: center; color : #fffff;">Nilai Maximal Dalam Satu Bulan Terakhir</h7> -->
+                        <div class="w3-container w3-red w3-center w3-margin-top w3-round-xlarge" style="width:100%" id="maksimal-kelembapan">0%
+                        </div>
+                        <!-- <h7 style= "text-align: center ; color:#ffffff;">Nilai Manimal Dalam Satu Bulan Terakhir</h7> -->
+                        <div class="w3-container w3-blue w3-margin-top w3-round-xlarge" style="width:100%" id="minimal-kelembapan">0%</div>
+                    </div><br>
+                    <svg width=15>
+                        <rect width="15" height="15" style="fill:#4caf50" /></svg>
+                    <span style="line-height: 10px; vertical-align:top;">Average</span>
+                    <svg width=15>
+                        <rect width="15" height="15" style="fill:#f44336" /></svg>
+                    <span style="line-height: 10px; vertical-align:top;">Min/Hari</span>
+                    <svg width=15>
+                        <rect width="15" height="15" style="fill:#2196f3" /></svg>
+                    <span style="line-height: 10px; vertical-align:top;">Max/Hari</span>
+                </div>
+
+            </div>
+
+            <h3 style="text-align:center;font-weight:Bold;">Pergeseran Tanah </h3>
+            <div id="chart"></div>
+    </main>
+
+</div>
 
     <div class="container-fluid">
         <div class="row">
@@ -128,13 +177,13 @@
                                 <img src="gambar/flood.png" style="float:left;width:28px;height:28px">
                                 Banjir
                             </a>
-                        </li>
+                        <!-- </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/profile">
                                 <span data-feather="users"></span>
                                 Profile
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </div>
@@ -144,51 +193,15 @@
         </div>
 
     </div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="row">
-            <div class="col-sm-6 col-md-5 col-lg-6">
-                <h3 style="text-align:center;font-weight:bold; margin-top:40px">Kelembapan Tanah</h3>
-                <h3 style="text-align:center; font-size: 100px;"id="real-kelembapan">80</h3>
-
-            </div>
-            <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-                <h3 style="text-align:center;font-weight:bold;margin-top :40px">Overview</h3>
-                <div class="panjang">
-                    <div class="w3-Gray ">
-                        <!-- <h7 style= "text-align: center; color:#ffffff;">Nilai Rata- Rata Perbulan</h7> -->
-                        <div class="w3-container w3-green w3-center w3-margin-top w3-round-xlarge" style="width:25%">20%
-                        </div>
-                        <!-- <h7 style= "text-align: center; color : #fffff;">Nilai Maximal Dalam Satu Bulan Terakhir</h7> -->
-                        <div class="w3-container w3-red w3-center w3-margin-top w3-round-xlarge" style="width:50%">50%
-                        </div>
-                        <!-- <h7 style= "text-align: center ; color:#ffffff;">Nilai Manimal Dalam Satu Bulan Terakhir</h7> -->
-                        <div class="w3-container w3-blue w3-margin-top w3-round-xlarge" style="width:75%">75%</div>
-                    </div><br>
-                    <svg width=15>
-                        <rect width="15" height="15" style="fill:#4caf50" /></svg>
-                    <span style="line-height: 10px; vertical-align:top;">Average</span>
-                    <svg width=15>
-                        <rect width="15" height="15" style="fill:#f44336" /></svg>
-                    <span style="line-height: 10px; vertical-align:top;">Min/Bulan</span>
-                    <svg width=15>
-                        <rect width="15" height="15" style="fill:#2196f3" /></svg>
-                    <span style="line-height: 10px; vertical-align:top;">Max/Bulan</span>
-                </div>
-
-            </div>
-
-            <h3 style="text-align:center;font-weight:Bold;">Pergeseran Tanah </h3>
-            <div id="chart"></div>
-    </main>
-
+   
     <script src="js/getarantanah.js"></script>
+    <script src="js/baru.js"></script>
     <script>
                 $.ajax({
                 url: 'api/DataKelembapan',
                 success: function(data) {
                 var a = data.data_kelembapan;
-                var len = a.length-1;
-                document.getElementById("real-kelembapan").innerHTML = a[len];
+                document.getElementById("real-kelembapan").innerHTML = a[0];
                 }
             });
     </script>

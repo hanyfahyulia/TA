@@ -95,13 +95,13 @@
                                 <img src="gambar/flood.png" style="float:left;width:28px;height:28px">
                                 Banjir
                             </a>
-                        </li>
+                        <!-- </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/profile">
                                 <span data-feather="users"></span>
                                 <b>Profile</b>
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </div>
@@ -160,12 +160,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
-                            <img src="gambar/IOT.jpg" alt="Image" class="img-fluid" />
+                            <img src="gambar/scxcx.png" alt="Image" class="img-fluid"style="width : 50%; margin-left:auto; margin-right:auto; display:block"/>
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="tm-section-text-container-2">
                                 <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
-                                    IOT
+                                    Hanifah Yulia
                                 </h2>
                                 <div class="tm-text-gray">
                                     <!-- <p class="mb-4">
@@ -173,12 +173,9 @@
                     You may share this Sided template or <a rel="nofollow" href="https://www.facebook.com/templatemo">our templatemo page</a> to your friends. Pellentesque commodo malesuada est.
                     </p> -->
                                     <p class="mb-0">
-                                        Internet of Things adalah suatu konsep dimana objek tertentu punya kemampuan
-                                        untuk mentransfer data lewat jaringan tanpa memerlukan adanya interaksi dari
-                                        manusia ke manusia ataupun dari manusia ke perangkat komputer. Internet of
-                                        Things leih sering disebut dengan singkatannya yaitu IoT. IoT ini sudah
-                                        berkembang pesat mulai dari konvergensi teknologi nirkabel,
-                                        micro-electromechanical systems (MEMS), dan juga Internet.
+                                        
+
+
                                     </p>
 
                                 </div>
@@ -195,17 +192,21 @@
                         <div class="col-md-12 col-lg-6 tm-text-left-container">
                             <div class="tm-section-text-container-3 tm-bg-white-alpha h-100">
                                 <h2 class="tm-text-accent tm-section-title-mb">
-                                    Banjir dan Tanah Longsor
+                                Ir. Subuh Pramono, S.T., M.T., IPM
                                 </h2>
                                 <p class="mb-0">
-                                    Banjir adalah kejadian alam di mana suatu daerah atau daratan yang biasanya kering
-                                    menjadi terendam air. Tanah longsor adalah peristiwa geologi di mana terjadi
-                                    pergerakan tanah seperti jatuhnya bebatuan atau gumpalan besar tanah.
+                                S.T. (Universitas Telkom, Indonesia)
+
+                                M.T. (Institut Teknologi Bandung, Indonesia)
+
+                                Program Profesi Insinyur (Universitas Sebelas Maret, Surakarta, Indonesia)
+
+                                Bidang keahlian: Teknik telekomunikasi
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-right-container">
-                            <img src="gambar/336982647.jpg" alt="Image" class="img-fluid tm-img-right" />
+                            <img src="gambar/subuh-pramono-685x1024.jpeg" alt="Image" class="img-fluid tm-img-right"style="width : 50%; margin-left:auto; margin-right:auto; display:block" />
                         </div>
                     </div>
                 </div>
@@ -216,19 +217,29 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 col-lg-6 tm-section-image-container tm-img-left-container">
-                            <img src="gambar/banjir2.jpg" alt="Image" class="img-fluid" />
+                            <img src="gambar/sutrisno-758x1024.jpg" alt="Image" class="img-fluid"style="width : 50% ; margin-left:auto; margin-right:auto; display:block" />
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="tm-section-text-container-2">
                                 <h2 class="tm-text-primary tm-section-title-mb tm-sm-bg-white-alpha">
-                                    Our Team
+                                Sutrisno, S.T., M.Sc., Ph.D
                                 </h2>
                                 <div class="tm-text-gray">
                                     <!-- <p class="mb-4">
                   	Sided Bootstrap v4.2.1 template has 3 HTML pages. <a href="index.html">Index</a>, <a href="page-2.html">Page 2</a> and <a href="page-3.html">Page 3</a>.
                     You may share this Sided template or <a rel="nofollow" href="https://www.facebook.com/templatemo">our templatemo page</a> to your friends. Pellentesque commodo malesuada est.
                     </p> -->
-                                    <p class="mb-0">
+                    <p class="mb-0">
+                    S.T. (Institut Teknologi Sepuluh Nopember, Indonesia)
+
+                      M.Sc. (King Saud University, Arab Saudi)
+
+                      Ph.D. (King Saud University, Arab Saudi)
+
+                      Bidang keahlian: Artificial Intelligence
+                                </p>
+
+                                    <!-- <p class="mb-0">
                                         Hanifah Yulia (Mahasiswa Teknik Elektro)
                                     </p>
                                     <p class="mb-0">
@@ -236,7 +247,7 @@
                                     </p>
                                     <p class="mb-0">
                                         Sutrisno S.T.,M.Sc,Ph.D. (Dosen Pembimbing 2)
-                                    </p>
+                                    </p> -->
                                 </div>
                             </div>
                         </div>

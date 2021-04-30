@@ -40,8 +40,7 @@ function updatechart() {
         url: 'api/DataKelembapan',
         success: function (data) {
             var b = data.data_kelembapan;
-            var len = b.length - 1;
-            document.getElementById("real-kelembapan").innerHTML = b[len];
+            document.getElementById("real-kelembapan").innerHTML = b[0];
         }
     });
     chart.updateSeries([{
@@ -49,6 +48,17 @@ function updatechart() {
     }])
 
 }
+$.ajax({
+    url: 'api/overviewkelembapan',
+    success: function (data) {
+        var average = data.rata;
+        var minimal = data.minimal;
+        var maksimal = data.maksimal;
+        document.getElementById("average-kelembapan").innerHTML = average;
+        document.getElementById("minimal-kelembapan").innerHTML = minimal;
+        document.getElementById("maksimal-kelembapan").innerHTML = maksimal;
+    }
+});
 
 var options = {
     series: [{

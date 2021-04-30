@@ -1,48 +1,50 @@
-var ketinggian = 0;
-var water_level = 0;
+var kelembapan = 0;
+var pergerakan_tanah = 1;
 
-function updatechartB() {
+function updatechart() {
     $.ajax({
-        url: 'api/DataKetinggian',
+        url: 'api/DataKelembapan',
         success: function (data) {
-            var E = data.data_ultrasonik;
-            ketinggian = E[0];
+            var a = data.data_kelembapan;
+            kelembapan = a[0];
         }
     });
     $.ajax({
-        url: 'api/DataWaterLevel',
+        url: 'api/DataPergeseranTanah',
         success: function (data) {
-            var F = data.data_water_level;
-            water_level = F[0];
+            var c = data.data_pergeseran_tanah;
+            pergerakan_tanah = c[0];
         }
     });
 
-    var G = 0;
-    var H = 'MEMUAT.....';
+    var b = 0;
+    var d = 'MEMUAT.....';
 
-    if (ketinggian < 25) {
-        G = 70; // 70 = siaga
-        H = 'SIAGA';
+    if (kelembapan >= 50) {
+        b = 70; // 70 = siaga
+        d = 'SIAGA';
     }
-    if (ketinggian > 25 && water_level < 200) {
-        G = 35; // 35 = aman
-        H = 'AMAN';
+    if (kelembapan < 50 && pergerakan_tanah < 1) {
+        b = 35; // 35 = aman
+        d = 'AMAN';
     }
-    if (ketinggian < 25 && water_level > 200) {
-        G = 100; // 100 = waspada 
-        H = 'WASPADA'
+    if (pergerakan_tanah > 1) {
+        b = 100; // 100 = waspada 
+        d = 'WASPADA'
     }
-    chartB.updateOptions({
-        series: [G],
-        labels: [H],
+    chart.updateOptions({
+        series: [b],
+        labels: [d],
     })
 }
 
-var G = 0;
-var H = 'MEMUAT.....';
 
-var optionsB = {
-    series: [G],
+var b = 0;
+var d = 'MEMUAT.....';
+
+
+var options = {
+    series: [b],
     chart: {
         height: 350,
         type: 'radialBar',
@@ -110,6 +112,7 @@ var optionsB = {
             type: 'horizontal',
             shadeIntensity: 0.5,
             gradientToColors: ['#dbd939'],
+
             inverseColors: true,
             opacityFrom: 1,
             opacityTo: 1,
@@ -119,9 +122,10 @@ var optionsB = {
     stroke: {
         lineCap: 'round'
     },
-    labels: [H],
+    labels: [d],
 };
 
-var chartB = new ApexCharts(document.querySelector("#chart"), optionsB);
-chartB.render();
-setInterval(updatechartB, 1000);
+var chart = new ApexCharts(document.querySelector("#chart2"), options);
+chart.render();
+// setTimeout(updatechart, 1000);
+setInterval(updatechart, 1000);

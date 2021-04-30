@@ -49,3 +49,6 @@ Route::get('levelair/{id}', [App\Http\Controllers\WaterController::class, 'show'
 Route::post('levelair', [App\Http\Controllers\WaterController::class, 'store']);
 Route::put('levelair/{id}', [App\Http\Controllers\WaterController::class, 'update']);
 Route::delete('levelair/{id}', [App\Http\Controllers\WaterController::class, 'delete']);
+
+Route::get('overviewkelembapan', [App\Http\Controllers\KelembapanController::class, 'overview_kelembapan']);
+Route::get('overviewketinggian', [App\Http\Controllers\AirController::class, 'overview_ketinggian']);

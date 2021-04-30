@@ -8,6 +8,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
     <title>Dashboard Template · Bootstrap v5.0</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 
@@ -17,6 +18,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sidebar.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -54,58 +56,59 @@
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+           
         </button>
-        <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+       
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="logout">Sign out</a>
             </li>
         </ul>
-    </header>
+    </header> 
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-sidebar sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
+    <!-- <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Universitas Sebelas Maret</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link " href="#">
-                                <span data-feather="home"></span>
-                                <b>Dashboard</b>
-                            </a>
+                        <a class="nav-link" href="#">Link</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tanahlongsor">
-                                <!-- <span data-feather="file"></span> -->
-                                <img src="gambar/landslide.png" style="float:left;width:28px;height:28px">
-
-                                Tanah Longsor
-                            </a>
+                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link active" aria-current="page" href="/tanahlongsor">Tanah Longsor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/banjir">
-                                <!-- <span data-feather="cloud-rain"></span> -->
-                                <img src="gambar/flood.png" style="float:left;width:28px;height:28px">
-                                Banjir
-                            </a>
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile">
-                                <span data-feather="users"></span>
-                                Profile
-                            </a>
-                        </li>
-
                     </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <a href="logout" class="btn btn-outline-success" type="submit">Sign out</a>
+                    </form>
                 </div>
-            </nav>
+            </div>
+        </nav>
+    </header> -->
 
+    
 
-        </div>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ 
+  <a href="/home">Dasboard</a>
+  <a href="/tanahlongsor">Tanah Longsor</a>
+  <a href="/banjir">Banjir</a>
+</div>
 
-    </div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
         <div class="row">
             <div class="col-sm-6 col-md-5 col-lg-6">
                 <h3 style="text-align:center;">Ketinggian Air Sungai </h3>
@@ -117,10 +120,16 @@
             </div>
         </div>
     </main>
+</div>
+
+    </div>
+    
+    
 
     <script src="bootstrap.bundle.min.js"></script>
     <script src="js/dasboard.js"></script>
-    <script src="js/dasboard2.js"></script>
+    <script src="js/dasboard_longsor.js"></script>
+    <script src="js/baru.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
@@ -128,7 +137,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
-    <script src="dashboard.js"></script>
+    <!-- <script src="dashboard.js"></script> -->
 </body>
 
 </html>

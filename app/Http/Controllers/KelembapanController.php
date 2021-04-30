@@ -14,9 +14,20 @@ public function kelembapan()
     }
 public function humidity()
     {
-        $data=Kelembapan::latest()->first();
+        $data=Kelembapan::latest()->get();
         $tanah=$data->pluck('data_kelembapan');
         return ['data_kelembapan'=>$tanah];
+        // return $data;
+    }
+    public function overview_kelembapan()
+    {
+        $data=Kelembapan::whereDate('created_at', date('Y-m-d'))->get();
+        $tanah=$data->pluck('data_kelembapan');
+        $waktu=$data->pluck('created_at');
+        $average=$data->avg('data_kelembapan');
+        $minimal=$data->min('data_kelembapan');
+        $maksimal=$data->max('data_kelembapan');
+        return ['data_kelembapan'=>$tanah, 'created_at'=>$waktu, 'rata'=>$average, 'minimal'=>$minimal, 'maksimal'=>$maksimal];
         // return $data;
     }
     
